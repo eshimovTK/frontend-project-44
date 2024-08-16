@@ -11,6 +11,11 @@
   "author": "Eshimov Timur",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/create-config": "^1.0.0",
+    "@eslint/js": "^9.9.0",
+    "eslint": "^9.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "globals": "^15.9.0",
     "jest": "^29.7.0"
   }
 }
