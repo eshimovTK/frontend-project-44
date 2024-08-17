@@ -7,8 +7,9 @@ console.log('Добро пожаловать, в "Игры разума"!\nИг�
 const userName = getName();
 
 export const getAnswerIsEvenNumber = () => {
-	console.log('Чтобы пройти испытание нужно дать 3 правильных ответа.\nОтветьте "да", если число чётное или "нет", если нечётное.');
+	console.log('Чтобы пройти испытание нужно дать 3 правильных ответа подряд.\nОтветь "да", если число чётное или "нет", если нечётное.');
     const aggregateAnswerIsEven = [];
+    const aggregateAnswers = [];
 
     while (aggregateAnswerIsEven.length !== 3) {
         const number = Math.floor(Math.random() * 100);
@@ -22,14 +23,19 @@ export const getAnswerIsEvenNumber = () => {
             isEvenToString = 'нет';
         };
         if (isEvenToString === answerIsEven.toLowerCase()) {
-            console.log('Верно!');
-            aggregateAnswerIsEven.push(`число: ${number}; ответ: ${answerIsEven}`);
+            console.log('Верно!\n---------------------------------------------');
+            aggregateAnswerIsEven.push('x')
+            aggregateAnswers.push(`число: ${number}; ответ: ${answerIsEven}`);
         } else {
-            console.log(`"${answerIsEven}" - неправильный ответ. Правильный ответ "${isEvenToString}"`);
+            console.log(`"${answerIsEven}" - неправильный ответ. Правильный ответ "${isEvenToString}"\n${userName}, твои ответы обнулились. Дайте 3 правильных ответа подряд.\n---------------------------------------------`);
+            aggregateAnswerIsEven.splice(0, aggregateAnswerIsEven.length);
+            aggregateAnswers.push(`число: ${number}; ответ: ${answerIsEven}`);
         };
     };
+    return aggregateAnswers;
 };
 
-getAnswerIsEvenNumber();
+const aggregateAnswers = getAnswerIsEvenNumber();
 
-console.log(`Поздравляю, ${userName}, ты победил в игре "Чёт-нечёт"!`);
+console.log(`Поздравляю, ${userName}, ты победил в игре "Чёт-нечёт"!\nНиже статистика ответов:`);
+console.log(aggregateAnswers);
