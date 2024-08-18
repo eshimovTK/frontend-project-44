@@ -5,6 +5,6 @@ brain-games:
 publish:
 	npm publish --dry-run
 link:
-	npm link
+	sudo npm link
 lint:
 	npx eslint .

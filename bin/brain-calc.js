@@ -14,31 +14,33 @@ export const getAnswerResult = () => {
     const aggregateAnswers = [];
     let i = 0;
 
-    for (i; i <= 3; i++) {
+    for (i; i < 3; i++) {
         
         const firstNumber = getRandomNumber(100);
         const lastNumber = getRandomNumber(100);
         const operators = ['+', '-', '*'];
-        const randomOperator = getRandomNumber(operators.length);
+        const randomOperator = operators[getRandomNumber(operators.length)];
         const textExpression = `${firstNumber} ${randomOperator} ${lastNumber}`;
-        const expressionToInt = parseInt(textExpression);
+        const expressionResult = eval(textExpression);
+        const expressionResultToStr = String(expressionResult);
 
         console.log(`Какой результат выражения?\nВыражение: ${textExpression}?`);
 
         const getUserAnswer = readlineSync.question('Ваш ответ: ');
 
-        if (getUserAnswer === expressionToInt) {
+        if (getUserAnswer === expressionResultToStr) {
             console.log('Верно!\n---------------------------------------------');
-            aggregateAnswers.push(`выражение: ${textExpression}; ваш ответ: ${getUserAnswer}; правильный ответ: ${expressionToInt}`);
+            aggregateAnswers.push(`выражение: ${textExpression}; ваш ответ: ${getUserAnswer}; правильный ответ: ${expressionResult}`);
         } else {
-            console.log(`"${getUserAnswer}" - неправильный ответ. Правильный ответ "${expressionToInt}"\nПопробуйте снова, ${userName}.\nНиже статистика ответов:\n---------------------------------------------`);
-            aggregateAnswers.push(`выражение: ${textExpression}; ваш ответ: ${getUserAnswer}; правильный ответ: ${expressionToInt}`);
+            console.log(`"${getUserAnswer}" - неправильный ответ. Правильный ответ "${expressionResult}"\nПопробуйте снова, ${userName}.\nНиже статистика ответов:\n---------------------------------------------`);
+            aggregateAnswers.push(`выражение: ${textExpression}; ваш ответ: ${getUserAnswer}; правильный ответ: ${expressionResult}`);
             console.log(aggregateAnswers);
             break;
         };
-        if (i === 3) {
-            console.log(`Поздравляю, ${userName}, ты победил в игре "Калькулятор"!\nНиже статистика ответов:`);
+        if (i === 2) {
+            console.log(`Поздравляю, ${userName}, ты победил в игре "Калькулятор"!\nНиже статистика ответов:\n---------------------------------------------`);
             console.log(aggregateAnswers);
         };
     };
 };
+getAnswerResult();
