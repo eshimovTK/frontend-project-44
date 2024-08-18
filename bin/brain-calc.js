@@ -29,16 +29,16 @@ export const getAnswerResult = () => {
         const getUserAnswer = readlineSync.question('Ваш ответ: ');
 
         if (getUserAnswer === expressionResultToStr) {
+            aggregateAnswers.push(`выражение: ${textExpression}; ваш ответ: ${getUserAnswer}; правильный ответ: ${expressionResult}`);
             console.log('Верно!\n---------------------------------------------');
-            aggregateAnswers.push(`выражение: ${textExpression}; ваш ответ: ${getUserAnswer}; правильный ответ: ${expressionResult}`);
         } else {
-            console.log(`"${getUserAnswer}" - неправильный ответ. Правильный ответ "${expressionResult}"\nПопробуйте снова, ${userName}.\nНиже статистика ответов:\n---------------------------------------------`);
             aggregateAnswers.push(`выражение: ${textExpression}; ваш ответ: ${getUserAnswer}; правильный ответ: ${expressionResult}`);
+            console.log(`"${getUserAnswer}" - неправильный ответ. Правильный ответ "${expressionResult}"\nПопробуйте снова, ${userName}.\nНиже статистика ответов:\n---------------------------------------------`);
             console.log(aggregateAnswers);
             break;
         };
         if (i === 2) {
-            console.log(`Поздравляю, ${userName}, ты победил в игре "Калькулятор"!\nНиже статистика ответов:\n---------------------------------------------`);
+            console.log(`Поздравляю, ${userName}, вы победили в игре "Калькулятор"!\nНиже статистика ответов:\n---------------------------------------------`);
             console.log(aggregateAnswers);
         };
     };
