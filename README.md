@@ -12,4 +12,4 @@ https://asciinema.org/a/qgWAsToZ2zAckyxDIcpHDX89F
 https://asciinema.org/a/Gs8RT9hTa5QTVWcRfY7kRaxL0
 
 ### Демонстрация игры brain-progression(прогрессия):
-https://asciinema.org/a/Ta9qhMbgyvrX40SJj7CzotOUg
+https://asciinema.org/a/uLnw5Tmc9ZedM5d1IBggjwCPs
