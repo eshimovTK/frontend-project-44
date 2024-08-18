@@ -7,3 +7,6 @@ https://asciinema.org/a/XW4CpA52YOEdr2K5Sn5C1ahsN
 
 ### Демонстрация игры brain-calc(Калькулятор):
 https://asciinema.org/a/qgWAsToZ2zAckyxDIcpHDX89F
+
+### Демонстрация игры brain-gcd(Наибольший общий делитель):
+https://asciinema.org/a/Gs8RT9hTa5QTVWcRfY7kRaxL0
