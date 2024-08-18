@@ -10,3 +10,6 @@ https://asciinema.org/a/qgWAsToZ2zAckyxDIcpHDX89F
 
 ### Демонстрация игры brain-gcd(Наибольший общий делитель):
 https://asciinema.org/a/Gs8RT9hTa5QTVWcRfY7kRaxL0
+
+### Демонстрация игры brain-progression(прогрессия):
+https://asciinema.org/a/Ta9qhMbgyvrX40SJj7CzotOUg
