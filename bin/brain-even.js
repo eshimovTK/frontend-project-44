@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { getName } from '../src/cli.js';
-import { getRandomNumber } from '../src/getRandomNumber.js';
+import { getName, getRandomNumber } from '../src/index.js';
 
 console.log('Добро пожаловать, в "Игры разума"!\nИгра "Чёт-нечёт"');
 
