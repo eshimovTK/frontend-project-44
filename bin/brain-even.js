@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import { getName } from '../src/cli.js';
+import { getRandomNumber } from '../src/getRandomNumber.js';
 
 console.log('Добро пожаловать, в "Игры разума"!\nИгра "Чёт-нечёт"');
 
@@ -12,7 +13,7 @@ export const getAnswerIsEvenNumber = () => {
     const aggregateAnswers = [];
 
     while (aggregateAnswerIsEven.length !== 3) {
-        const number = Math.floor(Math.random() * 100);
+        const number = getRandomNumber(100);
         const isEven = number % 2;
         let isEvenToString = '';
         console.log(`Чётное ли число ${number}?`);
@@ -25,11 +26,11 @@ export const getAnswerIsEvenNumber = () => {
         if (isEvenToString === answerIsEven.toLowerCase()) {
             console.log('Верно!\n---------------------------------------------');
             aggregateAnswerIsEven.push('x')
-            aggregateAnswers.push(`число: ${number}; ответ: ${answerIsEven}`);
+            aggregateAnswers.push(`число: ${number}; ваш ответ: ${answerIsEven}; правильный ответ: ${isEvenToString}`);
         } else {
             console.log(`"${answerIsEven}" - неправильный ответ. Правильный ответ "${isEvenToString}"\n${userName}, твои ответы обнулились. Дайте 3 правильных ответа подряд.\n---------------------------------------------`);
             aggregateAnswerIsEven.splice(0, aggregateAnswerIsEven.length);
-            aggregateAnswers.push(`число: ${number}; ответ: ${answerIsEven}`);
+            aggregateAnswers.push(`число: ${number}; ваш ответ: ${answerIsEven}; правильный ответ: ${isEvenToString}`);
         };
     };
     return aggregateAnswers;
