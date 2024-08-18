@@ -15,7 +15,7 @@ export const getAnswerIsEvenNumber = () => {
 
     for (i; i < 3; i++) {
         
-        const number = getRandomNumber(100);
+        const number = getRandomNumber(0, 101);
         const isEven = number % 2;
         let isEvenToString = '';
         console.log(`Чётное ли число ${number}?`);

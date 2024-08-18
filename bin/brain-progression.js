@@ -15,9 +15,9 @@ export const getAnswerResult = () => {
 
     for (i; i < 3; i++) {
         
-        let beginNumberProgression = getRandomNumber(100);
-        const progressionDifference = getRandomNumber(10);
-        const hidenPosition = getRandomNumber(10);
+        let beginNumberProgression = getRandomNumber(0, 100);
+        const progressionDifference = getRandomNumber(1, 10);
+        const hidenPosition = getRandomNumber(0, 10);
         let hidenNumber = 0;
         const progression = [];
         

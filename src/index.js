@@ -5,8 +5,8 @@ export const getName = () => {
 	console.log (`Привет, ${name}!`);
 	return name;
 };
-export const getRandomNumber = (range) => {
-    const number = Math.floor(Math.random() * range);
+export const getRandomNumber = (min, max) => {
+    const number = Math.floor(Math.random() * (max - min) + min);
     return number;
 }
 export const getGCD = (firstNumber, lastNumber) => {
