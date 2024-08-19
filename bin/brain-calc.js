@@ -15,10 +15,10 @@ export const getAnswerResult = () => {
 
     for (i; i < 3; i++) {
         
-        const firstNumber = getRandomNumber(1, 101);
-        const lastNumber = getRandomNumber(1, 101);
+        const firstNumber = getRandomNumber(101, 1);
+        const lastNumber = getRandomNumber(101, 1);
         const operators = ['+', '-', '*'];
-        const randomOperator = operators[getRandomNumber(0, operators.length)];
+        const randomOperator = operators[getRandomNumber(operators.length)];
         const textExpression = `${firstNumber} ${randomOperator} ${lastNumber}`;
         const expressionResult = eval(textExpression);
         const expressionResultToStr = String(expressionResult);

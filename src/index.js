@@ -5,7 +5,7 @@ export const getName = () => {
 	console.log (`Привет, ${name}!`);
 	return name;
 };
-export const getRandomNumber = (min, max) => {
+export const getRandomNumber = (max = 101, min = 0) => {
     const number = Math.floor(Math.random() * (max - min) + min);
     return number;
 }

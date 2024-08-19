@@ -15,8 +15,8 @@ export const getAnswerResult = () => {
 
     for (i; i < 3; i++) {
         
-        const firstNumber = getRandomNumber(1, 100);
-        const lastNumber = getRandomNumber(1, 100);
+        const firstNumber = getRandomNumber(100, 1);
+        const lastNumber = getRandomNumber(100, 1);
         const getResultGCD = getGCD(firstNumber, lastNumber);
         const expressionResultToStr = String(getResultGCD);
 
