@@ -5,7 +5,7 @@ export const getName = () => {
 	console.log (`Привет, ${name}!`);
 	return name;
 };
-export const getRandomNumber = (max = 101, min = 0) => {
+export const getRandomNumber = (max = 100, min = 0) => {
     const number = Math.floor(Math.random() * (max - min) + min);
     return number;
 }
@@ -20,4 +20,12 @@ export const getGCD = (firstNumber, lastNumber) => {
         };
     };
     return a + b;
+};
+export const isPrimeNumber = (num = 100) => {
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0 && i === num) {
+            return true;
+        };
+    };
+    return false;
 };
