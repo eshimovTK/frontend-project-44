@@ -11,5 +11,8 @@ https://asciinema.org/a/qgWAsToZ2zAckyxDIcpHDX89F
 ### Демонстрация игры brain-gcd(Наибольший общий делитель):
 https://asciinema.org/a/Gs8RT9hTa5QTVWcRfY7kRaxL0
 
-### Демонстрация игры brain-progression(прогрессия):
+### Демонстрация игры brain-progression(Прогрессия):
 https://asciinema.org/a/uLnw5Tmc9ZedM5d1IBggjwCPs
+
+### Демонстрация игры brain-prime(Простое число):
+https://asciinema.org/a/ENV2fRGyXcjbNt6aX26nApFjH
