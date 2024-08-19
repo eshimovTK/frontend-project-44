@@ -30,14 +30,14 @@ export const getAnswerResult = () => {
                 progression.push(beginNumberProgression);
             };
         };
-        const expressionResultToStr = String(hidenNumber);
+        const progressionResultToStr = String(hidenNumber);
         const progressionToString = progression.join(', ');
 
         console.log(`Какое число пропущенно в прогрессии?\nПрогрессия: ${progressionToString}`);
 
         const getUserAnswer = readlineSync.question('Ваш ответ: ');
 
-        if (getUserAnswer === expressionResultToStr) {
+        if (getUserAnswer === progressionResultToStr) {
             aggregateAnswers.push(`Прогрессия: ${progressionToString}; ваш ответ: ${getUserAnswer}; правильный ответ: ${hidenNumber}`);
             console.log('Верно!\n---------------------------------------------');
         } else {
