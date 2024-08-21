@@ -1,14 +1,18 @@
 import readlineSync from 'readline-sync';
 
 export const getName = () => {
-	const name = readlineSync.question('Назовите своё имя: ');
+    const name = readlineSync.question('Назовите своё имя: ');
 	console.log (`Привет, ${name}!`);
 	return name;
+
 };
-export const getRandomNumber = (max = 100, min = 0) => {
+
+export const getRandomNumber = (min = 0, max = 100) => {
     const number = Math.floor(Math.random() * (max - min) + min);
     return number;
+
 }
+
 export const getGCD = (firstNumber, lastNumber) => {
     let a = firstNumber;
     let b = lastNumber;
@@ -21,11 +25,47 @@ export const getGCD = (firstNumber, lastNumber) => {
     };
     return a + b;
 };
+
+export const getProgression = (beginNumberProgression, progressionDifference) => {
+    let progression = [];
+    while(progression.length < 10) {
+        beginNumberProgression += progressionDifference;
+        progression.push(beginNumberProgression);
+    };
+    return progression;
+};
+
 export const isPrimeNumber = (num = 100) => {
     for (let i = 2; i < num; i++) {
         if (num % i === 0 && i === num) {
-            return true;
+            return 0;
         };
     };
     return false;
+};
+
+export const startMassage = (gameName) => {
+    console.log(`Добро пожаловать, в "Игры разума"!\nИгра ${gameName}`);
+};
+
+export const checkingAnswers = (userName, userAnswer, correctAnswer, i) => {
+    if (correctAnswer === userAnswer.toLowerCase()) {
+        console.log('Верно!\n---------------------------------------------');
+    } else {
+        console.log(`"${userAnswer}" - неправильный ответ. Правильный ответ "${correctAnswer}"\nПопробуйте снова, ${userName}`);
+        return false;
+    };
+    if (i === 2) {
+        console.log(`Поздравляю, ${userName}, вы победили в игре!`);
+    };
+};
+
+export const getCorrectAnswer = (number) => {
+    let correctAnswer = '';
+    if (number === 0) {
+        correctAnswer = 'да';
+    } else {
+        correctAnswer = 'нет';
+    };
+    return correctAnswer;
 };
