@@ -15,7 +15,7 @@ export const startProgressionGame = () => {
         const correctNumber = progression[hidenPosition];
         progression[hidenPosition] = '..';
         const correctAnswer = String(correctNumber);
-        const question = progression.join(', ');
+        const question = progression.join(' ');
         console.log(`Question: ${question}`);
         const userAnswer = readlineSync.question('Your answer: ');
         const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i, question);
