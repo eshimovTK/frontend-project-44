@@ -14,7 +14,7 @@ export const startPrimeGame = () => {
         console.log(`Question: ${randomNumber}`);
         const userAnswer = readlineSync.question('Your answer: ');
         const correctAnswer = getCorrectAnswer(isPrime);
-        const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i, randomNumber);
+        const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i);
         
         if (endingGame === false) {
             break;
