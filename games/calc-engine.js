@@ -17,8 +17,8 @@ export const startCalcGame = () => {
     const userAnswer = readlineSync.question('Your answer: ');
     const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i, question);
     if (endingGame === false) {
-        break
-      }
+      break;
+    }
   }
 };
 export default startCalcGame;
