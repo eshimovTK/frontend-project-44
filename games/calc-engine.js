@@ -8,7 +8,7 @@ export const startCalcGame = (gameName) => {
         const randomNumber1 = getRandomNumber();
         const randomNumber2 = getRandomNumber();
         const operators = ['+', '-', '*'];
-        const randomOperator = operators[getRandomNumber(0, operators.length)];
+        const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
         const question = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
         const expression = eval(question);
         const correctAnswer = String(expression);
