@@ -14,8 +14,8 @@ export const startProgressionGame = (gameName) => {
         progression[hidenPosition] = '..';
         const correctAnswer = String(correctNumber);
         const progressionToString = progression.join(', ');
-        console.log(`Какое число пропущенно в прогрессии?\nПрогрессия: ${progressionToString}`);
-        const userAnswer = readlineSync.question('Ваш ответ: ');
+        console.log(`What number is missing in the progression?\nQuestion: ${progressionToString}`);
+        const userAnswer = readlineSync.question('Your answer: ');
         const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i);
         
         if (endingGame === false) {

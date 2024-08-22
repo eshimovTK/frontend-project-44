@@ -4,14 +4,14 @@ import { getName, getRandomNumber, startMassage, checkingAnswers, getCorrectAnsw
 export const startPrimeGame = (gameName) => {
 	startMassage(gameName);
     const userName = getName();
-    console.log('Ответь "да", если число простое или "нет", если нет.');
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
     for (let i = 0; i < 3; i++) {
         
         const randomNumber = getRandomNumber(2);
         const isPrime = isPrimeNumber(randomNumber);
-        console.log(`Простое ли число ${randomNumber}?`);
-        const userAnswer = readlineSync.question('Ваш ответ: ');
+        console.log(`Question: ${randomNumber}`);
+        const userAnswer = readlineSync.question('Your answer: ');
         const correctAnswer = getCorrectAnswer(isPrime);
         const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i);
         

@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 
 export const getName = () => {
-    const name = readlineSync.question('Назовите своё имя: ');
-	console.log (`Привет, ${name}!`);
+    const name = readlineSync.question('May I have your name? ');
+	console.log (`Hello, ${name}!`);
 	return name;
 
 };
@@ -44,28 +44,28 @@ export const isPrimeNumber = (num = 100) => {
     return false;
 };
 
-export const startMassage = (gameName) => {
-    console.log(`Добро пожаловать, в "Игры разума"!\nИгра ${gameName}`);
+export const startMassage = () => {
+    console.log(`Welcome to the Brain Games!`);
 };
 
 export const checkingAnswers = (userName, userAnswer, correctAnswer, i) => {
     if (correctAnswer === userAnswer.toLowerCase()) {
-        console.log('Верно!\n---------------------------------------------');
+        console.log('Correct!');
     } else {
-        console.log(`"${userAnswer}" - неправильный ответ. Правильный ответ "${correctAnswer}"\nПопробуйте снова, ${userName}`);
+        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'\nLet's try again, ${userName}`);
         return false;
     };
     if (i === 2) {
-        console.log(`Поздравляю, ${userName}, вы победили в игре!`);
+        console.log(`Congratulations, ${userName}!`);
     };
 };
 
 export const getCorrectAnswer = (number) => {
     let correctAnswer = '';
     if (number === 0) {
-        correctAnswer = 'да';
+        correctAnswer = 'yes';
     } else {
-        correctAnswer = 'нет';
+        correctAnswer = 'no';
     };
     return correctAnswer;
 };
