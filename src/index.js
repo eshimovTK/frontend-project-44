@@ -26,9 +26,9 @@ export const getGCD = (firstNumber, lastNumber) => {
     return a + b;
 };
 
-export const getProgression = (beginNumberProgression, progressionDifference) => {
+export const getProgression = (beginNumberProgression, progressionDifference, progressionLength) => {
     let progression = [];
-    while(progression.length < 10) {
+    while(progression.length <= progressionLength) {
         beginNumberProgression += progressionDifference;
         progression.push(beginNumberProgression);
     };

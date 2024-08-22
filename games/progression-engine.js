@@ -8,8 +8,9 @@ export const startProgressionGame = (gameName) => {
     for (let i = 0; i < 3; i++) {
         const beginNumberProgression = getRandomNumber();
         const progressionDifference = getRandomNumber(2, 10);
-        let progression = getProgression(beginNumberProgression, progressionDifference);
-        const hidenPosition = getRandomNumber(0, 10);
+        const progressionLength = getRandomNumber(5, 10);
+        let progression = getProgression(beginNumberProgression, progressionDifference, progressionLength);
+        const hidenPosition = getRandomNumber(0, progressionLength);
         const correctNumber = progression[hidenPosition];
         progression[hidenPosition] = '..';
         const correctAnswer = String(correctNumber);
