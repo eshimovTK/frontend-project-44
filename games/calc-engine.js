@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+
 import { getName, getRandomNumber, startMassage, checkingAnswers } from '../src/index.js';
 
 export const startCalcGame = () => {
