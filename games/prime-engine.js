@@ -1,8 +1,9 @@
 import readlineSync from 'readline-sync';
 import { getName, getRandomNumber, startMassage, checkingAnswers, getCorrectAnswer, isPrimeNumber } from '../src/index.js';
 
-export const startPrimeGame = (gameName) => {
-	startMassage(gameName);
+export const startPrimeGame = () => {
+	const gameName = 'brain-progression';
+    startMassage(gameName);
     const userName = getName();
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 

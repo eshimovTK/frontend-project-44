@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
 import { getName, getRandomNumber, startMassage, checkingAnswers, getCorrectAnswer } from '../src/index.js';
 
-export const startIsEvenGame = (gameName) => {
-    startMassage(gameName);
+export const startIsEvenGame = () => {
+    startMassage();
     const userName = getName();
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
 

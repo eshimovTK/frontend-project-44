@@ -1,7 +1,8 @@
 import readlineSync from 'readline-sync';
 import { getName, getRandomNumber, startMassage, checkingAnswers } from '../src/index.js';
 
-export const startCalcGame = (gameName) => {
+export const startCalcGame = () => {
+    const gameName = 'brain-calc';
     startMassage(gameName);
     const userName = getName();
     for (let i = 0; i < 3; i++) {

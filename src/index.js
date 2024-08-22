@@ -44,7 +44,8 @@ export const isPrimeNumber = (num = 100) => {
     return false;
 };
 
-export const startMassage = () => {
+export const startMassage = (gameName = '') => {
+    console.log(`${gameName}\n`);
     console.log(`Welcome to the Brain Games!`);
 };
 
