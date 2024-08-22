@@ -22,3 +22,4 @@ export const startCalcGame = () => {
         };
     };
 };
+export default startCalcGame;

@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { getName, getRandomNumber, startMassage, checkingAnswers, getCorrectAnswer, isPrimeNumber } from '../src/index.js';
 
-export const startPrimeGame = () => {
+const startPrimeGame = () => {
 	const gameName = 'brain-prime';
     startMassage(gameName);
     const userName = getName();
@@ -11,7 +11,6 @@ export const startPrimeGame = () => {
         
         const randomNumber = getRandomNumber();
         const isPrime = isPrimeNumber(randomNumber);
-        console.log(isPrime);
         console.log(`Question: ${randomNumber}`);
         const userAnswer = readlineSync.question('Your answer: ');
         const correctAnswer = getCorrectAnswer(isPrime);
@@ -22,3 +21,4 @@ export const startPrimeGame = () => {
         };
     };
 };
+export default startPrimeGame;

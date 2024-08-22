@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { getName, getRandomNumber, startMassage, checkingAnswers, getProgression } from '../src/index.js';
 
-export const startProgressionGame = () => {
+const startProgressionGame = () => {
 	const gameName = 'brain-progression';
     startMassage(gameName);
     const userName = getName();
@@ -25,3 +25,4 @@ export const startProgressionGame = () => {
         };
     };
 };
+export default startProgressionGame;

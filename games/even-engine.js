@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { getName, getRandomNumber, startMassage, checkingAnswers, getCorrectAnswer } from '../src/index.js';
 
-export const startIsEvenGame = () => {
+const startIsEvenGame = () => {
     startMassage();
     const userName = getName();
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -19,3 +19,4 @@ export const startIsEvenGame = () => {
         };
     };
 };
+export default startIsEvenGame;
