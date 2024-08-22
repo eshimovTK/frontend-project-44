@@ -35,13 +35,13 @@ export const getProgression = (beginNumberProgression, progressionDifference, pr
     return progression;
 };
 
-export const isPrimeNumber = (num = 100) => {
-    for (let i = 2; i < num; i++) {
+export const isPrimeNumber = (num) => {
+    for (let i = 2; i < num; i +=1 ) {
         if (num % i === 0 && i === num) {
             return 0;
         };
     };
-    return false;
+    return num < 1;
 };
 
 export const startMassage = (gameName = '') => {
