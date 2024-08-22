@@ -37,11 +37,11 @@ export const getProgression = (beginNumberProgression, progressionDifference, pr
 
 export const isPrimeNumber = (num) => {
     for (let i = 2; i < num; i += 1) {
-        if (num % i === 0 && i === num) {
-            return 0;
+        if (num % i === 0) {
+            return false;
         };
     };
-    return num < 1;
+    return num > 1;
 };
 
 export const startMassage = (gameName = '') => {
@@ -64,7 +64,7 @@ export const checkingAnswers = (userName, userAnswer, correctAnswer, i, question
 
 export const getCorrectAnswer = (number) => {
     let correctAnswer = '';
-    if (number === 0) {
+    if (number === 0 || number === true) {
         correctAnswer = 'yes';
     } else {
         correctAnswer = 'no';

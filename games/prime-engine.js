@@ -9,12 +9,13 @@ export const startPrimeGame = () => {
 
     for (let i = 0; i < 3; i++) {
         
-        const randomNumber = getRandomNumber(2);
+        const randomNumber = getRandomNumber();
         const isPrime = isPrimeNumber(randomNumber);
+        console.log(isPrime);
         console.log(`Question: ${randomNumber}`);
         const userAnswer = readlineSync.question('Your answer: ');
         const correctAnswer = getCorrectAnswer(isPrime);
-        const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i);
+        const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i, randomNumber);
         
         if (endingGame === false) {
             break;
