@@ -6,7 +6,7 @@ const startProgressionGame = () => {
     startMassage(gameName);
     const userName = getName();
     console.log(`What number is missing in the progression?`);
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i += 1) {
         const beginNumberProgression = getRandomNumber();
         const progressionDifference = getRandomNumber(2, 10);
         const progressionLength = getRandomNumber(5, 10);

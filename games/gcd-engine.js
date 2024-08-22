@@ -6,7 +6,7 @@ export const startGcdGames = () => {
     startMassage(gameName);
     const userName = getName();
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i += 1) {
         const randomNumber1 = getRandomNumber(1);
         const randomNumber2 = getRandomNumber(1);
         const question = [randomNumber1, randomNumber2].join(' ');

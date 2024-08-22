@@ -7,8 +7,7 @@ const startPrimeGame = () => {
     const userName = getName();
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
-    for (let i = 0; i < 3; i++) {
-        
+    for (let i = 0; i < 3; i += 1) {
         const randomNumber = getRandomNumber();
         const isPrime = isPrimeNumber(randomNumber);
         console.log(`Question: ${randomNumber}`);

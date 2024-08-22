@@ -5,7 +5,8 @@ export const startCalcGame = () => {
     const gameName = 'brain-calc';
     startMassage(gameName);
     const userName = getName();
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i += 1) {
+
         const randomNumber1 = getRandomNumber();
         const randomNumber2 = getRandomNumber();
         const operators = ['+', '-', '*'];
@@ -18,8 +19,11 @@ export const startCalcGame = () => {
         const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i, question);
         
         if (endingGame === false) {
-            break;
+
+            break
+
         };
     };
+
 };
 export default startCalcGame;
