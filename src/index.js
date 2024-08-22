@@ -48,10 +48,11 @@ export const startMassage = () => {
     console.log(`Welcome to the Brain Games!`);
 };
 
-export const checkingAnswers = (userName, userAnswer, correctAnswer, i) => {
+export const checkingAnswers = (userName, userAnswer, correctAnswer, i, question = '') => {
     if (correctAnswer === userAnswer.toLowerCase()) {
         console.log('Correct!');
     } else {
+        console.log(`Question: ${question}\nYour answer: ${userAnswer}`)
         console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'\nLet's try again, ${userName}!`);
         return false;
     };

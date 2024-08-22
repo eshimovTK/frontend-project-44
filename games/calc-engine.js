@@ -9,12 +9,12 @@ export const startCalcGame = (gameName) => {
         const randomNumber2 = getRandomNumber();
         const operators = ['+', '-', '*'];
         const randomOperator = operators[getRandomNumber(0, operators.length)];
-        const textExpression = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
-        const expressionResult = eval(textExpression);
-        const correctAnswer = String(expressionResult);
-        console.log(`What is the result of the expression?\nQuestion: ${textExpression}?`);
+        const question = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
+        const expression = eval(question);
+        const correctAnswer = String(expression);
+        console.log(`What is the result of the expression?\nQuestion: ${question}?`);
         const userAnswer = readlineSync.question('Your answer: ');
-        const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i);
+        const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i, question);
         
         if (endingGame === false) {
             break;

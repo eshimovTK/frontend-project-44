@@ -13,10 +13,10 @@ export const startProgressionGame = (gameName) => {
         const correctNumber = progression[hidenPosition];
         progression[hidenPosition] = '..';
         const correctAnswer = String(correctNumber);
-        const progressionToString = progression.join(', ');
-        console.log(`What number is missing in the progression?\nQuestion: ${progressionToString}`);
+        const question = progression.join(', ');
+        console.log(`What number is missing in the progression?\nQuestion: ${question}`);
         const userAnswer = readlineSync.question('Your answer: ');
-        const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i);
+        const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i, question);
         
         if (endingGame === false) {
             break;
