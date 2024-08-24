@@ -24,10 +24,9 @@ export const getGCD = (firstNumber, lastNumber) => {
   return a + b;
 };
 
-// eslint-disable-next-line max-len
-export const getProgression = (beginNumberProgression, progressionDifference, progressionLength) => {
+export const getProgression = (startNumber, progressionDifference, progressionLength) => {
   const progression = [];
-  let startNumberProgression = beginNumberProgression;
+  let startNumberProgression = startNumber;
   while (progression.length <= progressionLength) {
     startNumberProgression += progressionDifference;
     progression.push(startNumberProgression);
@@ -49,6 +48,7 @@ export const startMassage = (gameName = '') => {
   console.log('Welcome to the Brain Games!');
 };
 
+// eslint-disable-next-line consistent-return
 export const checkingAnswers = (userName, userAnswer, correctAnswer, i, question = '') => {
   if (correctAnswer === userAnswer.toLowerCase()) {
     console.log('Correct!');
