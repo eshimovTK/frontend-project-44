@@ -9,10 +9,10 @@ const startProgressionGame = () => {
   const userName = getName();
   console.log('What number is missing in the progression?');
   for (let i = 0; i < 3; i += 1) {
-    const beginNumberProgression = getRandomNumber();
+    const startNumber = getRandomNumber();
     const progressionDifference = getRandomNumber(2, 10);
     const progressionLength = getRandomNumber(5, 10);
-    const progression = getProgression(beginNumberProgression, progressionDifference, progressionLength);
+    const progression = getProgression(startNumber, progressionDifference, progressionLength);
     const hidenPosition = getRandomNumber(0, progressionLength);
     const correctNumber = progression[hidenPosition];
     progression[hidenPosition] = '..';
