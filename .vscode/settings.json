@@ -1,3 +1,5 @@
 {
-    "makefile.configureOnOpen": true
+    "makefile.configureOnOpen": true,
+    "editor.tabSize": 2,
+    "editor.indentSize": "tabSize"
 }

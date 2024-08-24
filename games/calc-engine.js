@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
-import { getName, getRandomNumber, startMassage, checkingAnswers } from '../src/index.js';
+import {
+  getName, getRandomNumber, startMassage, checkingAnswers, expression,
+} from '../src/index.js';
 
 export const startCalcGame = () => {
   const gameName = 'brain-calc';
@@ -11,7 +13,7 @@ export const startCalcGame = () => {
     const operators = ['+', '-', '*'];
     const randomOperator = operators[getRandomNumber(0, operators.length - 1)];
     const question = `${randomNumber1} ${randomOperator} ${randomNumber2}`;
-    const expression = eval(question);
+    expression(randomOperator, randomNumber1, randomNumber2);
     const correctAnswer = String(expression);
     console.log(`What is the result of the expression?\nQuestion: ${question}?`);
     const userAnswer = readlineSync.question('Your answer: ');
