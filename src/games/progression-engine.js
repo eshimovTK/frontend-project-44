@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import {
   getName, getRandomNumber, startMassage, checkingAnswers, getProgression,
-} from '../src/index.js';
+} from '../index.js';
 
 const startProgressionGame = () => {
   const gameName = 'brain-progression';

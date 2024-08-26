@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import {
   getName, getRandomNumber, startMassage, checkingAnswers, getCorrectAnswer, isPrimeNumber,
-} from '../src/index.js';
+} from '../index.js';
 
 const startPrimeGame = () => {
   const gameName = 'brain-prime';

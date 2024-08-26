@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import {
   getName, getRandomNumber, startMassage, checkingAnswers, getCorrectAnswer,
-} from '../src/index.js';
+} from '../index.js';
 
 const startIsEvenGame = () => {
   startMassage();

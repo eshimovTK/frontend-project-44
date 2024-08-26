@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import {
   getName, getRandomNumber, startMassage, checkingAnswers, getGCD,
-} from '../src/index.js';
+} from '../index.js';
 
 export const startGcdGames = () => {
   const gameName = 'brain-gcd';
