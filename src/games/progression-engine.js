@@ -16,7 +16,7 @@ const startProgressionGame = () => {
     }
     return progression;
   };
-  const progression = getProgression(startNumber, progressionDifference, progressionLength);
+  const progression = getProgression();
   const hidenPosition = getRandomNumber(0, progressionLength);
   const correctAnswer = progression[hidenPosition];
   progression[hidenPosition] = '..';

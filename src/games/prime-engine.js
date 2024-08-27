@@ -14,9 +14,8 @@ const startPrimeGame = () => {
     }
     return randomNumber > 1;
   };
-  const isPrime = isPrimeNumber();
   let correctAnswer = '';
-  if (isPrime) {
+  if (isPrimeNumber()) {
     correctAnswer = 'yes';
   } else {
     correctAnswer = 'no';
