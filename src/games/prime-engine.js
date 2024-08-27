@@ -1,25 +1,26 @@
-import readlineSync from 'readline-sync';
-import {
-  getName, getRandomNumber, startMassage, checkingAnswers, getCorrectAnswer, isPrimeNumber,
-} from '../index.js';
+import { getRandomNumber, startGames } from '../index.js';
+
+const gameName = 'brain-prime';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const startPrimeGame = () => {
-  const gameName = 'brain-prime';
-  startMassage(gameName);
-  const userName = getName();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber = getRandomNumber();
-    const isPrime = isPrimeNumber(randomNumber);
-    console.log(`Question: ${randomNumber}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    const correctAnswer = getCorrectAnswer(isPrime);
-    const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i, randomNumber);
-
-    if (endingGame === false) {
-      break;
+  const randomNumber = getRandomNumber();
+  const question = randomNumber;
+  const isPrimeNumber = () => {
+    for (let i = 2; i < randomNumber; i += 1) {
+      if (randomNumber % i === 0) {
+        return false;
+      }
     }
+    return randomNumber > 1;
+  };
+  const isPrime = isPrimeNumber();
+  let correctAnswer = '';
+  if (isPrime) {
+    correctAnswer = 'yes';
+  } else {
+    correctAnswer = 'no';
   }
+  return [question, correctAnswer];
 };
-export default startPrimeGame;
+export default () => startGames(description, startPrimeGame, gameName);

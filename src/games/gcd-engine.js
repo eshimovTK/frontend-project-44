@@ -1,26 +1,25 @@
-import readlineSync from 'readline-sync';
-import {
-  getName, getRandomNumber, startMassage, checkingAnswers, getGCD,
-} from '../index.js';
+import { getRandomNumber, startGames } from '../index.js';
+
+const gameName = 'brain-gcd';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const startGcdGames = () => {
-  const gameName = 'brain-gcd';
-  startMassage(gameName);
-  const userName = getName();
-
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber1 = getRandomNumber(1);
-    const randomNumber2 = getRandomNumber(1);
-    const question = [randomNumber1, randomNumber2].join(' ');
-    const getResultGCD = getGCD(randomNumber1, randomNumber2);
-    const correctAnswer = String(getResultGCD);
-    console.log(`Find the greatest common divisor of given numbers.\nQuestion: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i, question);
-
-    if (endingGame === false) {
-      break;
+  const randomNumber1 = getRandomNumber(1);
+  const randomNumber2 = getRandomNumber(1);
+  const getGCD = () => {
+    let a = randomNumber1;
+    let b = randomNumber2;
+    while (a !== 0 && b !== 0) {
+      if (a > b) {
+        a %= b;
+      } else {
+        b %= a;
+      }
     }
-  }
+    return a + b;
+  };
+  const question = [randomNumber1, randomNumber2].join(' ');
+  const correctAnswer = getGCD(randomNumber1, randomNumber2);
+  return [question, correctAnswer];
 };
-export default startGcdGames;
+export default () => startGames(description, startGcdGames, gameName);

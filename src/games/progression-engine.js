@@ -1,30 +1,26 @@
-import readlineSync from 'readline-sync';
-import {
-  getName, getRandomNumber, startMassage, checkingAnswers, getProgression,
-} from '../index.js';
+import { getRandomNumber, startGames } from '../index.js';
+
+const gameName = 'brain-prime';
+const description = 'What number is missing in the progression?';
 
 const startProgressionGame = () => {
-  const gameName = 'brain-progression';
-  startMassage(gameName);
-  const userName = getName();
-  console.log('What number is missing in the progression?');
-  for (let i = 0; i < 3; i += 1) {
-    const startNumber = getRandomNumber();
-    const progressionDifference = getRandomNumber(2, 10);
-    const progressionLength = getRandomNumber(5, 10);
-    const progression = getProgression(startNumber, progressionDifference, progressionLength);
-    const hidenPosition = getRandomNumber(0, progressionLength);
-    const correctNumber = progression[hidenPosition];
-    progression[hidenPosition] = '..';
-    const correctAnswer = String(correctNumber);
-    const question = progression.join(' ');
-    console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i, question);
-
-    if (endingGame === false) {
-      break;
+  const startNumber = getRandomNumber();
+  const progressionDifference = getRandomNumber(2, 10);
+  const progressionLength = getRandomNumber(5, 10);
+  const getProgression = () => {
+    const progression = [];
+    let startNumberProgression = startNumber;
+    while (progression.length <= progressionLength) {
+      startNumberProgression += progressionDifference;
+      progression.push(startNumberProgression);
     }
-  }
+    return progression;
+  };
+  const progression = getProgression(startNumber, progressionDifference, progressionLength);
+  const hidenPosition = getRandomNumber(0, progressionLength);
+  const correctAnswer = progression[hidenPosition];
+  progression[hidenPosition] = '..';
+  const question = progression.join(' ');
+  return [question, correctAnswer];
 };
-export default startProgressionGame;
+export default () => startGames(description, startProgressionGame, gameName);
