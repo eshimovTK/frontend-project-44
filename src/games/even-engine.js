@@ -3,7 +3,7 @@ import { getRandomNumber, startGames } from '../index.js';
 const gameName = 'brain-even';
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const startIsEvenGame = () => {
+const getDataGame = () => {
   const randomNumber = getRandomNumber();
   const modulo = randomNumber % 2;
   const question = randomNumber;
@@ -15,4 +15,4 @@ const startIsEvenGame = () => {
   }
   return [question, correctAnswer];
 };
-export default () => startGames(description, startIsEvenGame, gameName);
+export default () => startGames(description, getDataGame, gameName);

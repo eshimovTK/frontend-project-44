@@ -3,7 +3,7 @@ import { getRandomNumber, startGames } from '../index.js';
 const gameName = 'brain-prime';
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const startPrimeGame = () => {
+const getDataGame = () => {
   const randomNumber = getRandomNumber();
   const question = randomNumber;
   const isPrimeNumber = () => {
@@ -22,4 +22,4 @@ const startPrimeGame = () => {
   }
   return [question, correctAnswer];
 };
-export default () => startGames(description, startPrimeGame, gameName);
+export default () => startGames(description, getDataGame, gameName);

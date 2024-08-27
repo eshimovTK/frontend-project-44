@@ -3,7 +3,7 @@ import { getRandomNumber, startGames } from '../index.js';
 const gameName = 'brain-calc';
 const description = 'What is the result of the expression?';
 
-const startCalcGame = () => {
+const getDataGame = () => {
   const randomNumber1 = getRandomNumber();
   const randomNumber2 = getRandomNumber();
   const operators = ['+', '-', '*'];
@@ -26,4 +26,4 @@ const startCalcGame = () => {
   const correctAnswer = result;
   return [question, correctAnswer];
 };
-export default () => startGames(description, startCalcGame, gameName);
+export default () => startGames(description, getDataGame, gameName);

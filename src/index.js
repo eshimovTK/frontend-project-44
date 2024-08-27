@@ -5,14 +5,14 @@ export const getRandomNumber = (min = 0, max = 100) => {
   return number;
 };
 
-export const startGames = (description, startGame, gameName) => {
+export const startGames = (description, getDataGame, gameName) => {
   console.log(`${gameName}\n`);
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(description);
   for (let i = 0; i < 3; i += 1) {
-    const [question, correctAnswer] = startGame();
+    const [question, correctAnswer] = getDataGame();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== String(correctAnswer)) {

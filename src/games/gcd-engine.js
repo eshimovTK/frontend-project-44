@@ -3,7 +3,7 @@ import { getRandomNumber, startGames } from '../index.js';
 const gameName = 'brain-gcd';
 const description = 'Find the greatest common divisor of given numbers.';
 
-const startGcdGames = () => {
+const getDataGame = () => {
   const randomNumber1 = getRandomNumber(1);
   const randomNumber2 = getRandomNumber(1);
   const getGCD = () => {
@@ -22,4 +22,4 @@ const startGcdGames = () => {
   const correctAnswer = getGCD(randomNumber1, randomNumber2);
   return [question, correctAnswer];
 };
-export default () => startGames(description, startGcdGames, gameName);
+export default () => startGames(description, getDataGame, gameName);

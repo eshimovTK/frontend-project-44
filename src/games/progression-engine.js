@@ -3,7 +3,7 @@ import { getRandomNumber, startGames } from '../index.js';
 const gameName = 'brain-prime';
 const description = 'What number is missing in the progression?';
 
-const startProgressionGame = () => {
+const getDataGame = () => {
   const startNumber = getRandomNumber();
   const progressionDifference = getRandomNumber(2, 10);
   const progressionLength = getRandomNumber(5, 10);
@@ -23,4 +23,4 @@ const startProgressionGame = () => {
   const question = progression.join(' ');
   return [question, correctAnswer];
 };
-export default () => startGames(description, startProgressionGame, gameName);
+export default () => startGames(description, getDataGame, gameName);
