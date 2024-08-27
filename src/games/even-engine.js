@@ -14,7 +14,7 @@ const startIsEvenGame = () => {
     console.log(`Question: ${randomNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
     const correctAnswer = getCorrectAnswer(modulo);
-    const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i);
+    const endingGame = checkingAnswers(userName, userAnswer, correctAnswer, i, randomNumber);
 
     if (endingGame === false) {
       break;

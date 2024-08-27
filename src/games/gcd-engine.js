@@ -3,7 +3,7 @@ import {
   getName, getRandomNumber, startMassage, checkingAnswers, getGCD,
 } from '../index.js';
 
-export const startGcdGames = () => {
+const startGcdGames = () => {
   const gameName = 'brain-gcd';
   startMassage(gameName);
   const userName = getName();
