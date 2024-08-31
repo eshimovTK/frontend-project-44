@@ -3,11 +3,9 @@ import getRandomNumber from '../utils.js';
 
 const description = 'What number is missing in the progression?';
 const getProgression = (number, length, difference) => {
-  const progression = [];
-  let startNumberProgression = number;
-  while (progression.length <= length) {
-    startNumberProgression += difference;
-    progression.push(startNumberProgression);
+  const progression = [number];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(progression[i] + difference);
   }
   return progression;
 };
