@@ -1,19 +1,19 @@
-import { getRandomNumber, startGames } from '../index.js';
+import startGames from '../index.js';
+import getRandomNumber from '../utils.js';
 
-const gameName = 'brain-prime';
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const isPrimeNumber = (number) => {
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return number > 1;
+};
 
 const getDataGame = () => {
   const randomNumber = getRandomNumber();
   const question = randomNumber;
-  const isPrimeNumber = () => {
-    for (let i = 2; i < randomNumber; i += 1) {
-      if (randomNumber % i === 0) {
-        return false;
-      }
-    }
-    return randomNumber > 1;
-  };
   let correctAnswer = '';
   if (isPrimeNumber()) {
     correctAnswer = 'yes';
@@ -22,4 +22,4 @@ const getDataGame = () => {
   }
   return [question, correctAnswer];
 };
-export default () => startGames(description, getDataGame, gameName);
+export default () => startGames(description, getDataGame);

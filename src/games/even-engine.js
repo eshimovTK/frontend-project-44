@@ -1,6 +1,6 @@
-import { getRandomNumber, startGames } from '../index.js';
+import startGames from '../index.js';
+import getRandomNumber from '../utils.js';
 
-const gameName = 'brain-even';
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const getDataGame = () => {
@@ -15,4 +15,4 @@ const getDataGame = () => {
   }
   return [question, correctAnswer];
 };
-export default () => startGames(description, getDataGame, gameName);
+export default () => startGames(description, getDataGame);

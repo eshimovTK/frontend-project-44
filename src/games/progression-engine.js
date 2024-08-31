@@ -1,26 +1,26 @@
-import { getRandomNumber, startGames } from '../index.js';
+import startGames from '../index.js';
+import getRandomNumber from '../utils.js';
 
-const gameName = 'brain-prime';
 const description = 'What number is missing in the progression?';
+const getProgression = (number, length, difference) => {
+  const progression = [];
+  let startNumberProgression = number;
+  while (progression.length <= length) {
+    startNumberProgression += difference;
+    progression.push(startNumberProgression);
+  }
+  return progression;
+};
 
 const getDataGame = () => {
   const startNumber = getRandomNumber();
   const progressionDifference = getRandomNumber(2, 10);
   const progressionLength = getRandomNumber(5, 10);
-  const getProgression = () => {
-    const progression = [];
-    let startNumberProgression = startNumber;
-    while (progression.length <= progressionLength) {
-      startNumberProgression += progressionDifference;
-      progression.push(startNumberProgression);
-    }
-    return progression;
-  };
-  const progression = getProgression();
+  const progression = getProgression(startNumber, progressionLength, progressionDifference);
   const hidenPosition = getRandomNumber(0, progressionLength);
-  const correctAnswer = progression[hidenPosition];
+  const correctAnswer = String(progression[hidenPosition]);
   progression[hidenPosition] = '..';
   const question = progression.join(' ');
   return [question, correctAnswer];
 };
-export default () => startGames(description, getDataGame, gameName);
+export default () => startGames(description, getDataGame);
