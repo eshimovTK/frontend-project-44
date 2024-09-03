@@ -7,7 +7,7 @@ const isEven = (number) => (number % 2 ? 'no' : 'yes');
 const getDataGame = () => {
   const randomNumber = getRandomNumber();
   const question = randomNumber;
-  const correctAnswer = isEven();
+  const correctAnswer = isEven(randomNumber);
   return [question, correctAnswer];
 };
 export default () => startGames(description, getDataGame);
